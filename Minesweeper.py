@@ -12,7 +12,6 @@ class Cell:
 
     def __init__(self):
 
-        self.mine = False
         self.uncovered = False
         self.content = "_"
         
@@ -42,7 +41,7 @@ class Game:
         while mLeft > 0:
             x = randint(0, length - 1)
             y = randint(0, length - 1)
-            if self.mines[x][y].content == "_":
+            if not self.mines[x][y].content == "*":
                 self.mines[x][y].content = "*"
                 for i in range(0, 3):
                     for j in range(0, 3):
